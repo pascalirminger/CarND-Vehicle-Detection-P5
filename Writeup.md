@@ -25,7 +25,7 @@ The goals / steps of this project are the following:
 [image5f]: ./examples/bboxes_and_heat_6.png
 [image6]: ./examples/labels_map.png
 [image7]: ./examples/output_bboxes.png
-[video1]: ./project_video.mp4
+[video1]: ./output_videos/project_video_output.mp4
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/513/view) Points
 
