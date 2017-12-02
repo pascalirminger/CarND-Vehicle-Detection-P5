@@ -157,7 +157,8 @@ Here's an example result showing the heatmap from a series of frames of video, t
 I had a big problem with hundreds of false positives, even though the system looked quite right. I spent many hours investigating this issue and finally found the error in a parameter I changed in the `skimage.feature.hog()` function call.
 
 ```
-/Users/*/miniconda3/envs/carnd-term1/lib/python3.5/site-packages/skimage/feature/_hog.py:119: skimage_deprecation: Default value of `block_norm`==`L1` is deprecated and will be changed to `L2-Hys` in v0.15, skimage_deprecation)
+/Users/*/miniconda3/envs/carnd-term1/lib/python3.5/site-packages/skimage/feature/_hog.py:119:
+skimage_deprecation: Default value of `block_norm`==`L1` is deprecated and will be changed to `L2-Hys` in v0.15
 ```
 
 Due to this warning and the fact, that I was using a version > v0.15, I deciced to add the parameter `block_norm='L2-Hys'` to the function call. Besides making every step in the pipeline noticeably slower (Feature Extraction as well as Linesar SVM training and prediction), it also created massive false positives. Removing this parameter finally solved my problem and improved performance massively.
